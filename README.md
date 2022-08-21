@@ -1,15 +1,21 @@
 # README
 
-Primero, debe traerse el repositorio al git local para poder iniciar el programa utilizando el comando "rails s".
+First, fetch the repository to local git so that it can be initialized with "rails s"
 
-Una vez iniciada la aplicación con "rails s", llevará inmediatamente a la página principal donde se hace display del index con 15 propiedades por página.
+Initializing the app will inmediately take you to the main/index page, where pages of 15 properties each are displayed. Includes navigation buttons to pass through the pages
 
-Las páginas son traídas de la API de EasyBroker, endpoint properties. 
+Properties are fetched from EasyBroker API, properties endpoint.
 
-Se cuenta con botones de navegación de página.
+Each property card has a link to take you to the show property page, where the property detail is rendered. It also has a form that connects to the EasyBroker API, endpoint create-contact, to create new leads that are interested in the property.
 
-En cada card de propiedad individual existe un link que lleva a la página en que se renderea el detalle de la propiedad, así como un formulario para crear nuevos leads que se conecta con la API de EasyBroker, en el endpoint de create_contact.
 
+Notes:
+
+Improvement ideas: 
+1. Install the photo gallery on the property show page.
+2. include the pagination bar with buttons for specific pages.
+3. Include a google map api connection on the app to render the actual location of the property.
+4. Include EasyBroker logo on the property cards to make it look nicer.
 
 
 Questions for inspiration:
