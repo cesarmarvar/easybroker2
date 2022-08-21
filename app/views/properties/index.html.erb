@@ -1,0 +1,28 @@
+<p style="color: green"><%= notice %></p>
+
+<h1 class="xl-bold center">Properties</h1>
+<div class="pagination">
+    <%=link_to 'Previous', root_path(:page => @current_page - 1) %>
+    <%=link_to 'Next', root_path(:page => @current_page + 1) %>
+</div>
+<div class="propertiesContainer"id="properties">
+<% n = 1 %>
+  <% @properties.each do |property| %>
+  <div class="propertyCard">
+    <div class="thumbnail">  
+      <img src=<%= property["title_image_thumb"] %>/>
+    </div>
+    <div class="propertyDetail">
+    <p class="publicId" ><%= property["public_id"] %></p>
+    <p class="small-bold"><%= property["title"] %></p>
+    <p class="small">Tipo: <%= property["property_type"] %></p>
+    <p class="small">Ubicacion: <%= property["location"] %></p>
+    <p class="small center">
+      <%= link_to "Show this property", "properties/#{property["public_id"]}" %>
+    </p>
+    </div>
+  </div>
+  
+  <% end %>
+
+</div>
