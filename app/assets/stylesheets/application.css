@@ -17,7 +17,7 @@
 
  body {
   font-family: var(--font-primary);
-  background-color: rgba(236, 222, 222, 0.801);
+  background-color: whitesmoke;
  }
 
 .propertyCard {
@@ -96,6 +96,8 @@ p {
   border-radius: 8px;
   width: 40rem;
   background-color: white;
+  padding: 0.6rem;
+  margin-bottom: 1rem;
 }
 
 .image {

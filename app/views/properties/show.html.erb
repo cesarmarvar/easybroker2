@@ -1,53 +1,55 @@
 <p style="color: green"><%= notice %></p>
 <div class="mg">
     <div class="singlePropertyDetail">
+        <p class="publicId"><%= @property["public_id"] %></p>
         <p class="large-bold"><%= @property["title"] %></p>
+        <p class="small-bold">Ubicada en:</p>
         <p class="regular"> <%= @property["location"]["name"] %></p>
         <img class="image" src=<%=@property["property_images"][0]["url"]%> />
-        <%# <div class="division"> %>
-        <p>Public id: <%= @property["public_id"] %></p>
-        <p>Description: <%= @property["description"] %></p>
-        <p>Property type: <%= @property["property_type"] %></p>
+        <p class="small-bold">Descripcion:</p>
+        <p><%= @property["description"] %></p>
+        <p class="small-bold">Tipo de inmueble:</p>
+        <p><%= @property["property_type"] %></p>
     </div>
 
     <div class="formContainer">
         <h3>Interested in this property?</h3>
-        <p>Fill this form and we'll contact you:</p>
+        <p>Fill this form and we'll contact you:</p><br/>
         <div class="form">
             <%= form_with url: "new_contact", method: :post do |form| %>
 
                 <div>
                     <%= form.label :name, style: "display: block" %>
                     <%= form.text_field :name %>
-                </div>
+                </div><br/>
 
                 <div>
                     <%= form.label :phone, style: "display: block" %>
                     <%= form.text_field :phone %>
-                </div>
+                </div><br/>
 
                 <div>
                     <%= form.label :email, style: "display: block" %>
                     <%= form.text_field :email %>
-                </div>
+                </div><br/>
 
                 <div>
                     <%= form.label :message, style: "display: block" %>
                     <%= form.text_field :message %>
-                </div>
+                </div><br/>
 
                 <div>
                     <%= form.hidden_field :id, value: @property["public_id"] %>
-                </div>
+                </div><br/>
                 
                 <div>
                     <%= form.submit %>
-                </div>
+                </div><br/>
             <% end %>
         </div>
     </div>
 
         <p>
-        <%= link_to "Back", "/" %>
+        <%= link_to "Take me back!", "/" %>
         </p>
 </div>
