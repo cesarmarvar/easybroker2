@@ -30,6 +30,10 @@ class PropertiesController < ApplicationController
           source: "mydomain.com"
         }.to_json
       )
+      if @contact["status"] === "succesful"
+        flash[:notice] = "We'll be in contact with you as soon as possible."
+      end
+      pp @contact
   end
 
 
