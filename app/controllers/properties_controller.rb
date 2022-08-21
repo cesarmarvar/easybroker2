@@ -2,19 +2,17 @@ class PropertiesController < ApplicationController
   before_action :set_property, only: %i[ show edit update destroy create_contact ]
   skip_before_action :verify_authenticity_token
 
-  def initialize
+  def index
+    @current_page = [1, params[:page].to_i].max
     @results = HTTParty.get(
-      'https://api.stagingeb.com/v1/properties?page=1&limit=15&search%5Bstatuses%5D%5B%5D=published', 
+      "https://api.stagingeb.com/v1/properties?page=#{@current_page}&limit=15&search%5Bstatuses%5D%5B%5D=published", 
       headers: { "accept": "application/json", "X-Authorization": "l7u502p8v46ba3ppgvj5y2aad50lb9"} 
       )
-  end
-
-  def index_properties
     @properties = @results["content"]
   end
 
-  def show_property_detail
-    @property
+  def show
+    @property 
   end
 
   def create_contact
@@ -36,7 +34,7 @@ class PropertiesController < ApplicationController
 
 
   private
-  
+
     def set_property
       @property = HTTParty.get("https://api.stagingeb.com/v1/properties/#{params[:id]}", 
       headers: { "accept": "application/json", "X-Authorization": "l7u502p8v46ba3ppgvj5y2aad50lb9"})
