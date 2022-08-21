@@ -12,4 +12,111 @@
  *
  *= require_tree .
  *= require_self
+ *= require "styles"
  */
+
+ body {
+  font-family: var(--font-primary);
+  background-color: rgba(236, 222, 222, 0.801);
+ }
+
+.propertyCard {
+  width: 250px;
+  height: 360px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  gap: 1rem;
+  transition: .2s ease-in;
+}
+
+.propertyCard:hover {
+  /* transform: scale(1.1); */
+  box-shadow: 0px 0px 10px rgba(139, 128, 64, 0.897);
+}
+
+.propertiesContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 3rem;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.propertyDetail {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  justify-content: center;
+  padding: 0.8rem;
+}
+
+.thumbnail {
+  width: 250px;
+  height: 200px;
+  overflow: hidden;
+  text-align: center;
+}
+
+.debug {
+  border: 2px solid brown;
+}
+
+.publicId {
+  font-size: 10px;
+  color: gray;
+}
+
+p {
+  margin: 0px;
+}
+
+.pagination {
+  display: flex;
+  gap: 5rem;
+  justify-content: center;
+  margin: 2rem;
+}
+
+.center {
+  text-align: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.formContainer {
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  width: 40rem;
+  background-color: white;
+}
+
+.image {
+  height: 500px;
+  width: 800px;
+}
+
+.singlePropertyDetail {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.division {
+  background-color: rgb(151, 2, 2);
+  height: 1px;
+  width: 100%;
+}
+
+.mg {
+  margin: 1rem;
+  width: 60vw;
+}
